@@ -2,10 +2,10 @@
 /**
  * Beans Child
  *
- * @package BeansChild
+ * @package Beans\StarterChildTheme
  */
 
-namespace BeansChild;
+namespace Beans\StarterChildTheme;
 
 // Include Beans. Do not remove the line below.
 require_once get_template_directory() . '/lib/init.php';
