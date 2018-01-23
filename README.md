@@ -1,0 +1,1 @@
+# Beans-Starter-Child-Theme
