@@ -6,6 +6,11 @@ cache:
     node_modules
     vendor
 
+addons:
+  apt:
+    packages:
+      - libxml2-utils
+
 matrix:
   include:
     - php: '5.6'
