@@ -24,4 +24,7 @@ install:
   - source $DEV_LIB_PATH/travis.install.sh
 
 script:
-  - source $DEV_LIB_PATH/travis.script.sh
+  - source bin/travis.sh
+
+after_script:
+  - source $DEV_LIB_PATH/travis.after_script.sh

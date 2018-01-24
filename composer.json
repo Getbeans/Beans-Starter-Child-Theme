@@ -8,7 +8,18 @@
     "issues": "https://github.com/Getbeans/Beans-Starter-Child-Theme/issues",
     "source": "https://github.com/Getbeans/Beans-Starter-Child-Theme"
   },
+  "minimum-stability": "dev",
   "prefer-stable": true,
+  "autoload": {
+    "exclude-from-classmap": [
+      "/tests/"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Beans\\Child\\Tests\\": "tests/"
+    }
+  },
   "repositories": [
     {
       "type": "package",
@@ -23,11 +34,23 @@
       }
     }
   ],
+  "require": {
+    "php": "^7",
+    "composer/installers": "^1.4",
+    "roave/security-advisories": "dev-master"
+  },
   "require-dev": {
     "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3",
     "sirbrillig/phpcs-variable-analysis": "^2.0",
+    "wimg/php-compatibility": "^8.0",
     "wp-coding-standards/wpcs": "^0.14.0",
+    "phpunit/phpunit": "~4.8 || ~5.7.9",
+    "brain/monkey": "^2.0",
+    "mikey179/vfsStream": "^1.6",
     "xwp/wp-dev-lib": "^1.0.1"
+  },
+  "config": {
+    "sort-order": true
   },
   "scripts": {
     "install-codestandards": [
@@ -38,6 +61,8 @@
     "phpcs": [
       "@phpcs-src",
       "@phpcs-tests"
-    ]
+    ],
+    "test-unit": "\"vendor/bin/phpunit\" --testsuite unit",
+    "test-integration": "\"vendor/bin/phpunit\" --testsuite integration --configuration tests/phpunit/integration/phpunit.xml.dist"
   }
 }
